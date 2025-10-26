@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry Aunty Ninma</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        div{
+            text-align: center;
+            font-size: 30px;
+            margin-top: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        let a = 0;
+        let b = 0;
+        let div = document.querySelector("div");
+        let int;
+        let message = [
+            "From the bottom of my heart, I am sorry Aunty Ninma 😓😭",
+            "I had not been keeping track of and following dates",
+            "I know I am not suppposed to have an excuse",
+            "I am truly sorry",
+            "It may be late but, I want to wish you a Happy Birthday 🎂🎂",
+            "Thank you for all the support you have given me throughout my life 💖💖",
+            "May God keep you many more years in health, in wealth and in a happy married life.",
+            "Thank you for waiting to the end."
+        ]
+        function show() {
+            div.innerHTML = "";
+            int = setInterval(()=>{
+                div.innerHTML += message[a][b]
+                if(b == (message[a].length - 1)){
+                    clearInterval(int)
+                    a++;
+                    if(a != message.length){
+                        b = -1
+                        setTimeout(show,1000)
+                    }
+                }
+                b++;
+            },50)
+        }
+        show()
+    </script>
+</body>
+</html>
